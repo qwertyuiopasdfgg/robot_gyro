@@ -1,0 +1,360 @@
+object Form5: TForm5
+  Left = 156
+  Height = 692
+  Top = 214
+  Width = 1381
+  BorderIcons = []
+  BorderStyle = bsToolWindow
+  Caption = 'Сотрудник'
+  ClientHeight = 667
+  ClientWidth = 1381
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 648
+    Top = 8
+    Width = 1112
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        Width = 40
+        FieldName = 'ID'
+      end    
+      item
+        Title.Caption = 'Имя'
+        Width = 150
+        FieldName = 'name'
+      end    
+      item
+        Title.Caption = 'Фамилия'
+        Width = 150
+        FieldName = 'familia'
+      end    
+      item
+        Title.Caption = 'Название фильма'
+        Width = 200
+        FieldName = 'Name_1'
+      end    
+      item
+        Title.Caption = 'Цен. ар.'
+        Width = 60
+        FieldName = 'cenaorendi'
+      end    
+      item
+        Title.Caption = 'Пол. цен.'
+        Width = 70
+        FieldName = 'polnayacena'
+      end    
+      item
+        Title.Caption = 'Дата выдачи'
+        Width = 100
+        FieldName = 'datavzyatia'
+      end    
+      item
+        Title.Caption = 'Дата возврата'
+        Width = 120
+        FieldName = 'datasdachi'
+      end    
+      item
+        Title.Caption = 'Продавец'
+        Width = 150
+        FieldName = 'FIO'
+      end>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 1128
+    Height = 72
+    Top = 8
+    Width = 243
+    Caption = 'Добавить фильм'
+    Font.Height = -25
+    Font.Style = [fsBold]
+    OnClick = Button1Click
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 1128
+    Height = 64
+    Top = 80
+    Width = 243
+    Caption = 'Оформить заказ'
+    Font.Height = -25
+    Font.Style = [fsBold]
+    OnClick = Button2Click
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 1128
+    Height = 48
+    Top = 144
+    Width = 243
+    Caption = 'Удалить заказ "Ч"'
+    Font.Height = -25
+    Font.Style = [fsBold]
+    OnClick = Button3Click
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Left = 1128
+    Height = 49
+    Top = 192
+    Width = 243
+    Caption = 'Удалить заказ '
+    Font.Height = -25
+    Font.Style = [fsBold]
+    OnClick = Button4Click
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Button5: TButton
+    Left = 1128
+    Height = 80
+    Top = 240
+    Width = 243
+    Caption = 'Обновить'
+    Font.Height = -25
+    Font.Style = [fsBold]
+    OnClick = Button5Click
+    ParentFont = False
+    TabOrder = 5
+  end
+  object Edit1: TEdit
+    Left = 1128
+    Height = 28
+    Top = 384
+    Width = 243
+    TabOrder = 6
+  end
+  object Edit2: TEdit
+    Left = 1128
+    Height = 28
+    Top = 440
+    Width = 243
+    TabOrder = 7
+  end
+  object Edit3: TEdit
+    Left = 1128
+    Height = 28
+    Top = 496
+    Width = 243
+    TabOrder = 8
+  end
+  object Edit4: TEdit
+    Left = 1128
+    Height = 28
+    Top = 552
+    Width = 243
+    TabOrder = 9
+  end
+  object Label1: TLabel
+    Left = 1128
+    Height = 20
+    Top = 336
+    Width = 65
+    Caption = 'Поиск по'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 1128
+    Height = 20
+    Top = 360
+    Width = 48
+    Caption = 'Имени'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 1128
+    Height = 20
+    Top = 416
+    Width = 65
+    Caption = 'Фамилии'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 1128
+    Height = 20
+    Top = 472
+    Width = 130
+    Caption = 'Названию фильма'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 1128
+    Height = 20
+    Top = 528
+    Width = 69
+    Caption = 'Продавцу'
+    ParentColor = False
+  end
+  object Button6: TButton
+    Left = 1128
+    Height = 48
+    Top = 592
+    Width = 121
+    Caption = 'Поиск'
+    Font.Height = -22
+    Font.Style = [fsBold]
+    OnClick = Button6Click
+    ParentFont = False
+    TabOrder = 10
+  end
+  object Button7: TButton
+    Left = 1256
+    Height = 48
+    Top = 592
+    Width = 115
+    Caption = 'Очистить поля'
+    Font.Style = [fsBold]
+    OnClick = Button7Click
+    ParentFont = False
+    TabOrder = 11
+  end
+  object CheckBox1: TCheckBox
+    Left = 1240
+    Height = 24
+    Top = 336
+    Width = 118
+    Caption = 'Доп. функция'
+    OnChange = CheckBox1Change
+    TabOrder = 12
+  end
+  object MainMenu1: TMainMenu
+    left = 592
+    top = 144
+    object MenuItem1: TMenuItem
+      Caption = 'На главную'
+      OnClick = MenuItem1Click
+    end
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'procat'
+    KeepConnection = False
+    Password = 'root'
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'UTF8'
+    HostName = 'localhost'
+    Options = []
+    left = 592
+    top = 88
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL56Connection1
+    Options = []
+    left = 496
+    top = 208
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'familia'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'namefilm'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'prodavec'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'datavzyatia'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'datasdachi'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'cenaorendi'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'polnayacena'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_1'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'Name_1'
+        DataType = ftString
+        Precision = -1
+        Size = 180
+      end    
+      item
+        Name = 'god'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'kolvo'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_2'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'FIO'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end>
+    Active = True
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'Select * from klien'
+      'Join disk1 ON disk1.ID = klien.namefilm'
+      'join prodavec ON prodavec.ID = klien.prodavec'
+    )
+    Options = []
+    Params = <>
+    left = 496
+    top = 144
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 496
+    top = 88
+  end
+end
